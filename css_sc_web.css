@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+body {
+    background-color: #f0f8ff; /* Απαλό μπλε χρώμα φόντου */
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    background-color: #ffcc00; /* Χαρούμενο κίτρινο */
+    color: #333;
+    text-align: center;
+    padding: 15px; /* Μειώσαμε το padding για μικρότερο ύψος */
+    border-bottom: 4px solid #ff6600;
+}
+
+.header h1 {
+    font-size: 2.5em; /* Μικρότερο μέγεθος κειμένου */
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Container */
+.container {
+    display: flex;
+    flex: 1;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Στήλες */
+.column {
+    padding: 10px; /* Μειώσαμε το padding για πιο συμπαγείς στήλες */
+    min-height: 300px;
+    overflow: hidden; /* Αποφυγή ξεσχίματος περιεχομένου */
+    border-radius: 8px; /* Καλύτερη γωνία */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Απαλό σκίασμα για πιο φιλική εμφάνιση */
+}
+
+.column.left,
+.column.right {
+    width: 10%; /* Μειώσαμε το πλάτος της αριστερής και δεξιάς στήλης */
+    background-color: #ffcc99;
+    padding: 8px; /* Προσθέτουμε μικρότερο padding για να αποφεύγουμε να βγαίνουν τα στοιχεία από τα όρια */
+    overflow-y: auto; /* Προσθήκη δυνατότητας scroll αν χρειαστεί */
+}
+
+.column.middle {
+    width: 80%; /* Κεντρική στήλη */
+    background-color: white;
+    flex-grow: 1;
+    margin: 0 10px;
+}
+
+/* Τίτλοι στις στήλες */
+.column h2 {
+    text-align: center;
+    color: #ff6600;
+    font-size: 1.7em; /* Μικρότερο μέγεθος τίτλων */
+    margin-bottom: 12px;
+}
+
+/* Λίστες με παιδικό χαρακτήρα */
+.column ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.column ul li {
+    margin: 8px 0; /* Μειώσαμε την απόσταση μεταξύ των στοιχείων */
+}
+
+.column ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 10px; /* Μειώσαμε το padding των links */
+    background-color: #fff;
+    border-radius: 5px;
+    font-size: 1.1em; /* Μικρότερο μέγεθος κειμένου για τα links */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.column ul li a:hover {
+    background-color: #ff6600;
+    color: white;
+}
+
+/* Footer */
+.footer {
+    background-color: #ffcc00;
+    color: #333;
+    text-align: center;
+    padding: 10px; /* Μειώσαμε το padding για μικρότερο ύψος */
+    margin-top: 20px;
+    border-top: 4px solid #ff6600;
+}
+
+.footer p {
+    font-size: 1em; /* Μικρότερο μέγεθος κειμένου */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .column {
+        width: 100%;
+    }
+}
