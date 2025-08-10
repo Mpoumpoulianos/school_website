@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Σχολική Ιστοσελίδα</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <h1>Καλωσήρθατε στην Ιστοσελίδα του Σχολείου</h1>
+        <nav class="navbar">
+            <a href="#" data-page="home">Αρχική</a>
+            <a href="#" data-page="announcements">Ανακοινώσεις</a>
+            <a href="#" data-page="lessons">Υλικό Μαθημάτων</a>
+            <a href="#" data-page="calendar">Ημερολόγιο</a>
+            <a href="#" data-page="activities">Δραστηριότητες</a>
+            <a href="#" data-page="contact">Επικοινωνία</a>
+        </nav>
+    </header>
+
+    <!-- Container -->
+    <div class="container">
+
+        <!-- Left Menu -->
+        <aside class="column left">
+            <h2>Μενού</h2>
+            <ul>
+                <li><a href="#" data-page="home">Αρχική</a></li>
+                <li><a href="#" data-page="services">Υπηρεσίες</a></li>
+                <li><a href="#" data-page="products">Προϊόντα</a></li>
+                <li><a href="#" data-page="news">Νέα</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="column middle" id="main-content">
+            <h2>Κύριο Περιεχόμενο</h2>
+            <p>Επιλέξτε από το μενού για να δείτε πληροφορίες.</p>
+        </main>
+
+        <!-- Right Menu -->
+        <aside class="column right">
+            <h2>Επιλογές Χρήστη</h2>
+            <ul>
+                <li><a href="#" data-page="profile">Προφίλ</a></li>
+                <li><a href="#" data-page="settings">Ρυθμίσεις</a></li>
+                <li><a href="#" data-page="help">Βοήθεια</a></li>
+            </ul>
+        </aside>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Σχολείο - Όλα τα δικαιώματα διατηρούνται.</p>
+        <p>Επικοινωνία: <a href="mailto:contact@example.com">contact@example.com</a></p>
+        <p>Σχεδιασμός & Ανάπτυξη από τον Mpoumpouliano</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Γενικά */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: 
+      repeating-linear-gradient(
+        0deg,
+        rgba(255,255,255,0.2) 0px,
+        rgba(255,255,255,0.2) 1px,
+        transparent 1px,
+        transparent 30px
+      ),
+      linear-gradient(180deg, #cceaff 0%, #f0f8ff 100%);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    background-color: #ffcc00;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 4px solid #ff6600;
+}
+
+.header h1 {
+    font-size: 2em;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    background-color: #ff9900;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    background-color: #ff6600;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    background-color: #cc5500;
+}
+
+/* Container */
+.container {
+    display: flex;
+    flex: 1;
+    padding: 10px;
+}
+
+/* Στήλες */
+.column {
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.column.left, .column.right {
+    width: 15%;
+    background-color: #ffcc99;
+}
+
+.column.middle {
+    flex: 1;
+    background-color: white;
+    margin: 0 10px;
+}
+
+/* Λίστες */
+.column ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.column ul li {
+    margin: 8px 0;
+}
+
+.column ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 8px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.column ul li a:hover {
+    background-color: #ff6600;
+    color: white;
+}
+
+/* Footer */
+.footer {
+    background-color: #ffcc00;
+    text-align: center;
+    padding: 10px;
+    border-top: 4px solid #ff6600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .column.left, .column.right, .column.middle {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const mainContent = document.getElementById("main-content");
+
+    const pages = {
+        home: `<h2>Αρχική</h2><p>Καλωσήρθατε στην ιστοσελίδα του σχολείου μας!</p>`,
+        announcements: `<h2>Ανακοινώσεις</h2><ul><li>Η εκδρομή της Δευτέρας αναβάλλεται.</li><li>Η γιορτή λήξης θα γίνει στις 15 Ιουνίου.</li></ul>`,
+        lessons: `<h2>Υλικό Μαθημάτων</h2><p>Κατεβάστε τις σημειώσεις και ασκήσεις από εδώ.</p>`,
+        calendar: `<h2>Ημερολόγιο</h2><p>Δείτε όλες τις εκδηλώσεις και δραστηριότητες του σχολείου.</p>`,
+        activities: `<h2>Δραστηριότητες</h2><p>Σχολικές δράσεις, όμιλοι και εκδηλώσεις.</p>`,
+        contact: `<h2>Επικοινωνία</h2><p>Στείλτε μας μήνυμα στο contact@example.com</p>`,
+        services: `<h2>Υπηρεσίες</h2><p>Δείτε τις εκπαιδευτικές υπηρεσίες μας.</p>`,
+        products: `<h2>Προϊόντα</h2><p>Βιβλία και σχολικά είδη διαθέσιμα.</p>`,
+        news: `<h2>Νέα</h2><p>Όλες οι τελευταίες ειδήσεις του σχολείου.</p>`,
+        profile: `<h2>Προφίλ</h2><p>Προσωπικές ρυθμίσεις και στοιχεία.</p>`,
+        settings: `<h2>Ρυθμίσεις</h2><p>Αλλάξτε τις προτιμήσεις σας.</p>`,
+        help: `<h2>Βοήθεια</h2><p>Συχνές ερωτήσεις και οδηγίες χρήσης.</p>`
+    };
+
+    document.querySelectorAll("[data-page]").forEach(link => {
+        link.addEventListener("click", e => {
+            e.preventDefault();
+            const page = link.getAttribute("data-page");
+            if (pages[page]) {
+                mainContent.innerHTML = pages[page];
+            }
+        });
+    });
+});
