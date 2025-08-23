@@ -51,3 +51,31 @@ document.addEventListener("DOMContentLoaded", () => {
     closeModal();
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const mainContent = document.getElementById("main-content");
+
+    const pages = {
+        home: `<h2>Αρχική</h2><p>Καλωσήρθατε στην ιστοσελίδα του σχολείου μας!</p>`,
+        announcements: `<h2>Ανακοινώσεις</h2><ul><li>Η εκδρομή της Δευτέρας αναβάλλεται.</li><li>Η γιορτή λήξης θα γίνει στις 15 Ιουνίου.</li></ul>`,
+        lessons: `<h2>Υλικό Μαθημάτων</h2><p>Κατεβάστε τις σημειώσεις και ασκήσεις από εδώ.</p>`,
+        calendar: `<h2>Ημερολόγιο</h2><p>Δείτε όλες τις εκδηλώσεις και δραστηριότητες του σχολείου.</p>`,
+        activities: `<h2>Δραστηριότητες</h2><p>Σχολικές δράσεις, όμιλοι και εκδηλώσεις.</p>`,
+        contact: `<h2>Επικοινωνία</h2><p>Στείλτε μας μήνυμα στο contact@example.com</p>`,
+        services: `<h2>Υπηρεσίες</h2><p>Δείτε τις εκπαιδευτικές υπηρεσίες μας.</p>`,
+        products: `<h2>Προϊόντα</h2><p>Βιβλία και σχολικά είδη διαθέσιμα.</p>`,
+        news: `<h2>Νέα</h2><p>Όλες οι τελευταίες ειδήσεις του σχολείου.</p>`,
+        profile: `<h2>Προφίλ</h2><p>Προσωπικές ρυθμίσεις και στοιχεία.</p>`,
+        settings: `<h2>Ρυθμίσεις</h2><p>Αλλάξτε τις προτιμήσεις σας.</p>`,
+        help: `<h2>Βοήθεια</h2><p>Συχνές ερωτήσεις και οδηγίες χρήσης.</p>`
+    };
+
+    document.querySelectorAll("[data-page]").forEach(link => {
+        link.addEventListener("click", e => {
+            e.preventDefault();
+            const page = link.getAttribute("data-page");
+            if (pages[page]) {
+                mainContent.innerHTML = pages[page];
+            }
+        });
+    });
+});
